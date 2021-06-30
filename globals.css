@@ -1,0 +1,81 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Overpass:400,700,600,800|Inter:400|Roboto:400");
+* {
+  box-sizing: border-box;
+}
+.component-wrapper * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  pointer-events: none;
+}
+.component-wrapper a {
+  text-decoration: none;
+  display: contents;
+  pointer-events: auto;
+}
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+  pointer-events: auto;
+}
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+  visibility: hidden !important;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.hidden,
+.hidden * {
+  visibility: hidden;
+  pointer-events: none;
+}
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+.overlay {
+  position: absolute;
+  opacity: 0;
+  display: none;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+.overlay.animate-appear {
+  opacity: 0;
+  display: block;
+  animation: reveal 0.3s ease-in-out 1 normal forwards;
+}
+.overlay.animate-disappear {
+  opacity: 1;
+  display: block;
+  animation: reveal 0.3s ease-in-out 1 reverse forwards;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
